@@ -1,0 +1,64 @@
+::README::
+
+OverView and Working-->
+	FileSharer is a command line software to help in file sharing through intranet. This is made possible with the help of sockets.
+	Initially, The server is started primarily asking the user the directory he wants to share. Then the server waits for the connection at 
+	port number 7227.At this time, a client may try to connect to the server on the same port. On connection, The client is shown the files and
+	folders shared by the server.  then the client is supposed to input a set of commands as follows:
+	
+	Commands ::
+--> To download a file, type "download <file name with extension>" 
+--> To get into a directory further, type "open <folder name>" 
+--> To go back a directory, type "back" 
+--> To exit the software without downloading anything, type "exit" 
+	
+	Eg.
+	download a.txt, open inFolder, back, exit
+	
+	The "download" command helps download a selected file from the server.
+	The "open" command help open a certain directory shared by the server, i.e, to view the files in that directory
+	The "back" command enables the user to go one directory backward in the server's shared folder.
+	The "exit" command exits the software with a thanking message to both server and client.
+	
+	
+Major advantage of FileSharer::-->
+	Normally, file sharing softwares come differently for different operating systems. This is mainly due to the reason
+	that path names are formatted differently in different operating systems. But, in FileSharer is a software which runs 
+	both on the prominent Operating Systems Linux and Windows without problems. This is because initially, 
+	FileSharer detects the Operating System of the user	by the getProperty() of System class. 
+	And further this information is used for formatting the path String.
+	Viewing the code will give a better outlook.
+	
+Modifications to expect in the FileSharer 2.0::-->
+
+1.Download a directory on whole
+2.Have two connections at once 
+	(It was also attempted this time. But due to errors when two clients accessed the same file, we had to remove the facility. 
+	Files shall be synchronized in the next version.)
+3.A fully user friendly GUI
+
+
+
+To Compile/Execute the program (in UBUNTU)-->
+
+1. Extract the files to a desired directory. 
+2. Open the terminal window (Ctrl+Alt+T)
+3.Open the desired directory using cd commands.
+4. now type
+	javac ServerSide.java
+	javac ClientSide.java
+This is to first compile the two classes which give us the .class files
+5.Now Run the ServerSide class by typing
+	java ServerSide
+6. Now open a new terminal and do step 3.
+7. Run the ClienSide class by typing
+	java ClientSide
+8. Now follow the instructions prompted by the program clearly as it runs.
+
+NOTE::-->This software was developed on Eclipse IDE.	
+
+
+
+	
+	
+	
